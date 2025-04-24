@@ -7,3 +7,7 @@ function changeTitle () {
 window.onload = function() {
     alert("Welcome to the page!");
 }
+
+window. onload = function() {
+    console.log("Page loaded");
+}
