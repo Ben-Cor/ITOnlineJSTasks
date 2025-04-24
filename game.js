@@ -8,12 +8,30 @@ const character = {
         x: 0,
         y: 0,
     },
+    hasKey: true,
+    inventory: ['sword', 'shield', 'hat', 'potion'],
 }
 
 const chest = {
     coins: 5,
     isOpen: false,
     isLocked: false,
-    x: 10,
-    y: 5,
+    position: {
+        x: 10,
+        y: 5,
+    },
+    openChest: function() {
+       if (character.position === this.position) {
+            if (this.isLocked && !character.hasKey) {
+                console.log("The chest is locked.");
+            } else if (this.isLocked && character.hasKey) {
+                console.log("You unlocked the chest with the key!");
+            } else {
+                this.isOpen = true;
+                character.coins += this.coins;
+                this.coins = 0;
+                console.log("You opened the chest and found " + this.coins + " coins!");
+            }
+        }
+    }
 }
