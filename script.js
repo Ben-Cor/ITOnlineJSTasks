@@ -1,4 +1,4 @@
-function changeTitle () {
+function changeTitle() {
     var title = document.getElementById("title");
     if (title.textContent !== "This is a better Title!") {
         title.textContent = "This is a better Title!";
@@ -11,8 +11,15 @@ function changeTitle () {
 
 window.onload = function() {
     alert("Welcome to the page!");
-}
-
-window. onload = function() {
     console.log("Page loaded");
-}
+
+    const container = document.getElementById("messageContainer");
+    if (container) {
+        for (let i = 0; i < 5; i++) {
+            container.append(document.createElement("p"));
+            container.lastChild.textContent = "This is message " + (i + 1);
+        }
+    } else {
+        console.error("messageContainer element not found!");
+    }
+};
