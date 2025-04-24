@@ -1,3 +1,4 @@
+// This is a function to change the title of the page on button press
 function changeTitle() {
     var title = document.getElementById("title");
     if (title.textContent !== "This is a better Title!") {
@@ -9,6 +10,8 @@ function changeTitle() {
     }
 }
 
+//on load, adds a alert and console log
+// and appends 5 paragraphs to the messageContainer using a for loop
 window.onload = function() {
     alert("Welcome to the page!");
     console.log("Page loaded");
@@ -23,3 +26,23 @@ window.onload = function() {
         console.error("messageContainer element not found!");
     }
 };
+
+//array of films
+let films = [
+    "A New Hope",
+    "The Empire Strikes Back",
+    "Return of the Jedi",
+    "The Phantom Menace",
+    "Attack of the Clones",
+    "Revenge of the Sith",
+]
+
+//on load, appends the films to the filmList
+
+document.addEventListener("DOMContentLoaded", function() {
+    for (let i = 0; i < films.length; i++) {
+        let film = document.createElement("li");
+        film.textContent = films[i];
+        document.getElementById("filmList").appendChild(film);
+    }
+});
