@@ -8,6 +8,20 @@ const character = {
         x: 0,
         y: 0,
     },
+    move: function(direction) {
+        if (direction === 'up') {
+            this.position.y += 1;
+        }
+        else if (direction === 'down') {
+            this.position.y -= 1;
+        }
+        else if (direction === 'left') {
+            this.position.x -= 1;
+        }
+        else if (direction === 'right') {
+            this.position.x += 1;
+        }
+    },
     hasKey: true,
     inventory: ['sword', 'shield', 'hat', 'potion'],
 }
