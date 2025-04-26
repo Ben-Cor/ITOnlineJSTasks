@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link href="/src/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Banking App</title>
@@ -10,7 +9,7 @@
   </head>
   <body>
     <!-- header -->
-    <header class="flex justify-around items-center p-4 bg-slate-700 text-white">
+    <header class="fixed top-0 w-full flex justify-around items-center p-4 bg-slate-700 text-white">
       <div>
         <h1 class="text-3xl font-bold underline">Banking App</h1>
       </div>
@@ -23,6 +22,12 @@
         </ul>
       </nav>
     </header>
+
+    <div class="flex items-center justify-center h-screen h-[50vh]">
+      <button class="border-2 p-2 w-[200px] mx-3">Withdraw</button>
+      <button class="border-2 p-2 w-[200px] mx-3">Deposit</button>
+      <button class="border-2 p-2 w-[200px] mx-3">Check Balance</button>
+    </div>
 
     <footer class="fixed bottom-0 w-full">
       <div class="flex justify-between items-center p-4 bg-slate-700 text-white">
