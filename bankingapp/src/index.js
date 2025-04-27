@@ -6,7 +6,7 @@ const account2 = new BankAccount('987654321', 'Jane Smith', 2500);
 const account3 = new BankAccount('456789123', 'Alice Johnson', 5000);
 const account4 = new BankAccount('789123456', 'Bob Brown', 7500);
 const account5 = new BankAccount('321654987', 'Charlie White', 10000);
-
+const accounts = [account1, account2, account3, account4, account5];
 
 export function login () {
     let accountLogin = document.getElementById('accountNumber').value.toString();
@@ -26,3 +26,19 @@ export function login () {
 }
 
 window.login = login;
+
+export function deposit() {
+    let accountLogin = document.getElementById('accountNumber').value.toString();
+    accounts.forEach(account => {
+        if (accountLogin === account.accountNumber) {
+            let depositAmount = Number(document.getElementById('amountDeposit').value);
+            if (account.deposit(depositAmount)) {
+                alert('Deposit successful! New balance: ' + account.getBalance());
+            } else {
+                alert('Deposit failed! Please enter a valid amount.');
+            }
+        }
+    });
+}
+
+window.deposit = deposit;
