@@ -24,4 +24,4 @@ export default class BankAccount {
     getBalance() {
         return this.balance;
     }
-    }
+}
