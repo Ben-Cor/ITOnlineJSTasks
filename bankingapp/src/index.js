@@ -58,3 +58,14 @@ export function withdraw() {
     });
 }
 window.withdraw = withdraw;
+
+// Function to handle balance check action
+export function checkBalance() {
+    let accountLogin = document.getElementById('accountNumber').value.toString();
+    accounts.forEach(account => {
+        if (accountLogin === account.accountNumber) {
+            alert('Your balance is: ' + account.getBalance());
+        }
+    });
+}
+window.checkBalance = checkBalance;
