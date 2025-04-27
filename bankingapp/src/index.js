@@ -8,6 +8,7 @@ const account4 = new BankAccount('789123456', 'Bob Brown', 7500);
 const account5 = new BankAccount('321654987', 'Charlie White', 10000);
 const accounts = [account1, account2, account3, account4, account5];
 
+// Function to handle login action
 export function login () {
     let accountLogin = document.getElementById('accountNumber').value.toString();
     if (accountLogin === account1.accountNumber) {
@@ -24,9 +25,9 @@ export function login () {
         alert('Account not found!');
     }
 }
-
 window.login = login;
 
+// Function to handle deposit action
 export function deposit() {
     let accountLogin = document.getElementById('accountNumber').value.toString();
     accounts.forEach(account => {
@@ -40,5 +41,20 @@ export function deposit() {
         }
     });
 }
-
 window.deposit = deposit;
+
+// Function to handle withdraw action
+export function withdraw() {
+    let accountLogin = document.getElementById('accountNumber').value.toString();
+    accounts.forEach(account => {
+        if (accountLogin === account.accountNumber) {
+            let withdrawAmount = Number(document.getElementById('amountWithdraw').value);
+            if (account.withdraw(withdrawAmount)) {
+                alert('Deposit successful! New balance: ' + account.getBalance());
+            } else {
+                alert('Deposit failed! Please enter a valid amount.');
+            }
+        }
+    });
+}
+window.withdraw = withdraw;
