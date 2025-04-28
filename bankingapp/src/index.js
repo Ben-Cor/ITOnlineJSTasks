@@ -12,33 +12,20 @@ const accounts = [account1, account2, account3, account4, account5];
 export function login () {
     let accountLogin = document.getElementById('accountNumber').value.toString();
     const welcomeText = document.getElementById('welcomeMessage');
-    if (accountLogin === account1.accountNumber) {
-        welcomeText.innerHTML = `<h2> Welcome ${account1.accountHolder} </h2>
-                                <p> Your account number is: ${account1.accountNumber} </p>
-                                <p> Select an action below </p>`;
-        welcomeText.style.display = 'block';
-    } else if (accountLogin === account2.accountNumber) {
-        welcomeText.innerHTML = `<h2> Welcome ${account2.accountHolder} </h2>
-                                <p> Your account number is: ${account2.accountNumber} </p>
-                                <p> Select an action below </p>`;
-        welcomeText.style.display = 'block';
-    } else if (accountLogin === account3.accountNumber) {   
-        welcomeText.innerHTML = `<h2> Welcome ${account3.accountHolder} </h2>
-                                <p> Your account number is: ${account3.accountNumber} </p>
-                                <p> Select an action below </p>`;
-        welcomeText.style.display = 'block';
-    }  else if (accountLogin === account4.accountNumber) {
-        welcomeText.innerHTML = `<h2> Welcome ${account4.accountHolder} </h2>
-                                <p> Your account number is: ${account4.accountNumber} </p>
-                                <p> Select an action below </p>`;
-        welcomeText.style.display = 'block';
-    } else if (accountLogin === account5.accountNumber) {
-        welcomeText.innerHTML = `<h2> Welcome ${account5.accountHolder} </h2>
-                                <p> Your account number is: ${account5.accountNumber} </p>
-                                <p> Select an action below </p>`;
-        welcomeText.style.display = 'block';
-    } else {
+    let accountexists = false;
+    accounts.forEach(account => {
+        if (accountLogin === account.accountNumber) {
+            welcomeText.innerHTML = `<h2> Welcome ${account.accountHolder} </h2>
+                                    <p> Your account number is: ${account.accountNumber} </p>
+                                    <p> Select an action below </p>`;
+            welcomeText.style.display = 'block';
+            accountexists = true;
+        } 
+    });
+    if (accountexists === false) {
         alert('Account not found!');
+        welcomeText.style.display = 'none';
+        document.getElementById('accountNumber').value = '';
     }
 }
 window.login = login;
