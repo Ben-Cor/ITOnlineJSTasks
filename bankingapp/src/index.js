@@ -11,16 +11,32 @@ const accounts = [account1, account2, account3, account4, account5];
 // Function to handle login action
 export function login () {
     let accountLogin = document.getElementById('accountNumber').value.toString();
+    const welcomeText = document.getElementById('welcomeMessage');
     if (accountLogin === account1.accountNumber) {
-        alert('Welcome ' + account1.accountHolder + '!');
+        welcomeText.innerHTML = `<h2> Welcome ${account1.accountHolder} </h2>
+                                <p> Your account number is: ${account1.accountNumber} </p>
+                                <p> Select an action below </p>`;
+        welcomeText.style.display = 'block';
     } else if (accountLogin === account2.accountNumber) {
-        alert('Welcome ' + account2.accountHolder + '!');
+        welcomeText.innerHTML = `<h2> Welcome ${account2.accountHolder} </h2>
+                                <p> Your account number is: ${account2.accountNumber} </p>
+                                <p> Select an action below </p>`;
+        welcomeText.style.display = 'block';
     } else if (accountLogin === account3.accountNumber) {   
-        alert('Welcome ' + account3.accountHolder + '!');
+        welcomeText.innerHTML = `<h2> Welcome ${account3.accountHolder} </h2>
+                                <p> Your account number is: ${account3.accountNumber} </p>
+                                <p> Select an action below </p>`;
+        welcomeText.style.display = 'block';
     }  else if (accountLogin === account4.accountNumber) {
-        alert('Welcome ' + account4.accountHolder + '!');
+        welcomeText.innerHTML = `<h2> Welcome ${account4.accountHolder} </h2>
+                                <p> Your account number is: ${account4.accountNumber} </p>
+                                <p> Select an action below </p>`;
+        welcomeText.style.display = 'block';
     } else if (accountLogin === account5.accountNumber) {
-        alert('Welcome ' + account5.accountHolder + '!');
+        welcomeText.innerHTML = `<h2> Welcome ${account5.accountHolder} </h2>
+                                <p> Your account number is: ${account5.accountNumber} </p>
+                                <p> Select an action below </p>`;
+        welcomeText.style.display = 'block';
     } else {
         alert('Account not found!');
     }
