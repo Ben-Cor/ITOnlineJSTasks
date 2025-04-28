@@ -72,3 +72,11 @@ export function checkBalance() {
     });
 }
 window.checkBalance = checkBalance;
+
+// QuerySelectorAll to get all the buttons (testing purposes)
+document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        button.classList.add('hover:bg-slate-500', 'hover:text-white', 'rounded-lg');
+        });
+});
