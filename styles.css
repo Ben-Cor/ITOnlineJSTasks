@@ -1,0 +1,15 @@
+.numberInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+}

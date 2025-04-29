@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Tests</title>
     <script src="script.js"></script>
-    <link rel="stylesheet" href=" ./src/output.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="title" class="text-xl">This is a Title</h1>
-    <button class="border-2 border-black rounded-lg px-4 py-1 mt-4" onclick="changeTitle()">Test</button>
-    <div id="messageContainer">
+    <div class="numberInputs">
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+        <input type="number" id="num3" placeholder="Enter third number">
+        <input type="number" id="num4" placeholder="Enter fourth number">
+        <input type="number" id="num5" placeholder="Enter fifth number">
+        <button id="calculate">Calculate</button>
     </div>
-    <br>
-    <ul id="filmList">        
-    </ul>
+    <div class="results">
+        <h2>Results:</h2>
+        <p id="sum"></p>
+        <p id="average"></p>
+        <p id="max"></p>
+        <p id="min"></p>
+    </div>  
 </body>
 </html>
