@@ -3,7 +3,7 @@ import { task } from './task.js';
 
 export function addTask() {
     const taskDescription = document.getElementById('tasksText').value;
-    const taskDueDate = document.getElementById('tasksDate').value; // Placeholder for due date, can be replaced with a date picker or input
+    const taskDueDate = document.getElementById('tasksDate').value;
     const newTask = new task(false, taskDescription, taskDueDate);
 
     const taskList = document.getElementById('tasksUl');
@@ -27,12 +27,22 @@ export function addTask() {
     deleteTask.className = 'block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded';
     deleteTask.onclick = () => newTask.deleteTask(taskItem);
     
-
     taskItem.appendChild(checkbox);
     taskItem.appendChild(deleteTask);
     taskList.appendChild(taskItem);
-
-
 }
 
-document.addTask = addTask; // Expose the function to the global scope for HTML to access
+const taskButton = document.getElementById('addTask');
+taskButton.addEventListener('click', addTask);
+
+
+const darkModeButton = document.getElementById('darkMode');
+darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    if (document.body.classList.contains('dark')) {
+        darkModeButton.innerText = 'Light Mode';
+    }
+    else {
+        darkModeButton.innerText = 'Dark Mode';
+    }
+});
