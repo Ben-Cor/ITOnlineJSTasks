@@ -19,4 +19,8 @@ export class task {
         this.dueDate = newDueDate;
         this.priority = newPriority;
     }
+
+    deleteTask(taskElement) {
+        taskElement.remove();
+    }
 }
