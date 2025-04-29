@@ -1,9 +1,8 @@
 export class task {
-    constructor(completed, description, dueDate, priority) {
+    constructor(completed, description, dueDate) {
         this.completed = completed;
         this.description = description;
         this.dueDate = dueDate;
-        this.priority = priority;
     }
 
     completeTask() {
