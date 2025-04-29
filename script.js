@@ -1,20 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const calculate = document.getElementById("calculate");
-    calculate.addEventListener("click", function () {
-        const num1 = parseFloat(document.getElementById("num1").value);
-        const num2 = parseFloat(document.getElementById("num2").value);
-        const num3 = parseFloat(document.getElementById("num3").value);
-        const num4 = parseFloat(document.getElementById("num4").value);
-        const num5 = parseFloat(document.getElementById("num5").value);
 
-        const sum = document.getElementById("sum");
-        sum.innerHTML = `Sum: ${num1 + num2 + num3 + num4 + num5}`;
-        const average = document.getElementById("average");
-        average.innerHTML = `Average: ${(num1 + num2 + num3 + num4 + num5) / 5}`;
-        const max = document.getElementById("max");
-        max.innerHTML = `Max: ${Math.max(num1, num2, num3, num4, num5)}`;
-        const min = document.getElementById("min");
-        min.innerHTML = `Min: ${Math.min(num1, num2, num3, num4, num5)}`;
-    })
+    function maths() {
+        // Dynamically retrieve input values on each button press
+        const num1 = parseFloat(document.getElementById("num1").value) || 0;
+        const num2 = parseFloat(document.getElementById("num2").value) || 0;
+        const num3 = parseFloat(document.getElementById("num3").value) || 0;
+        const num4 = parseFloat(document.getElementById("num4").value) || 0;
+        const num5 = parseFloat(document.getElementById("num5").value) || 0;
+        const numbers = [num1, num2, num3, num4, num5];
+
+        // Perform calculations
+        const sumText = document.getElementById("sum");
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+        }
+        sumText.innerHTML = `Sum: ${sum}`;
+
+        const averageText = document.getElementById("average");
+        const average = sum / numbers.length;
+        averageText.innerHTML = `Average: ${average}`;
+
+        const maxText = document.getElementById("max");
+        const max = Math.max(...numbers);
+        maxText.innerHTML = `Max: ${max}`;
+
+        const minText = document.getElementById("min");
+        const min = Math.min(...numbers);
+        minText.innerHTML = `Min: ${min}`;
+    }
+
+    calculate.addEventListener("click", function () {
+        maths(); // Recalculate on button press
+    });
 });
