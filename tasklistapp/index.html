@@ -17,9 +17,15 @@
 
     <!-- Main Content -->
     <main class="flex flex-col items-center justify-center pt-20">
-      <div>
-        <label for="tasksText"></label>
-        <input class="border-2 border-blue-500 p-2" type="text" id="tasksText" placeholder="Enter a new task" />
+      <div class="flex flex-col items-center justify-center gap-4 w-full">
+          <label for="tasksText"></label>
+          <textarea class="border-2 border-blue-500 p-2 h-[80px] w-[40%]" id="tasksText" placeholder="Enter a new task"></textarea>
+          <div class="w-[60%] flex items-center justify-center gap-4">
+            <label for="tasksDate">Due Date:</label>
+            <input type="date" class="border-2 border-blue-500 p-2 h-[40px] w-[40%]" id="tasksDate"/>
+          </div>
+          
+        
         <button onclick="addTask()" id="addTask" class="bg-blue-500 text-white p-2 rounded">Add Task</button>
       </div>
       <div id="taskList" class="flex justify-center items-center mt-4 border-2 border-blue-500 p-4 w-[40%]">
