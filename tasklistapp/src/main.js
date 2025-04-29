@@ -9,7 +9,8 @@ export function addTask() {
 
     const taskList = document.getElementById('tasksUl');
     const taskItem = document.createElement('li');
-    taskItem.textContent = `${newTask.description} - Due: ${newTask.dueDate} - Priority: ${newTask.priority}`;
+    taskItem.className = 'pb-4 list-disc';
+    taskItem.innerHTML = `${newTask.description}<br>Due: ${newTask.dueDate}<br>Priority: ${newTask.priority}`;
     taskList.appendChild(taskItem);
 }
 
