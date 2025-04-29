@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sumText.innerHTML = `Sum: ${sum}`;
 
         const averageText = document.getElementById("average");
-        const average = sum / numbers.length;
+        let average = Math.round((sum / numbers.length)*100)/100;
         averageText.innerHTML = `Average: ${average}`;
 
         const maxText = document.getElementById("max");
