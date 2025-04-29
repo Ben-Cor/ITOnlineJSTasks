@@ -6,6 +6,11 @@ export function addTask() {
     const taskDueDate = document.getElementById('tasksDate').value;
     const newTask = new task(false, taskDescription, taskDueDate);
 
+    if (newTask.description === '' || newTask.dueDate === '') {
+        alert('Please fill in all fields');
+        return;
+    }
+
     const taskList = document.getElementById('tasksUl');
     const taskItem = document.createElement('li');
     taskItem.className = 'pb-4 list-disc';
