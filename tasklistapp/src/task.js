@@ -5,8 +5,13 @@ export class task {
         this.dueDate = dueDate;
     }
 
-    completeTask() {
+    completeTask(taskElement) {
         this.completed = !this.completed;
+        if (this.completed) {
+            taskElement.classList.add('line-through');
+        } else {
+            taskElement.classList.remove('line-through');
+        }
     }
 
     editTask(newDescription, newDueDate, newPriority) {

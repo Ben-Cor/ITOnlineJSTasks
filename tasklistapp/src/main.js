@@ -9,7 +9,16 @@ export function addTask() {
     const taskList = document.getElementById('tasksUl');
     const taskItem = document.createElement('li');
     taskItem.className = 'pb-4 list-disc';
-    taskItem.innerHTML = `${newTask.description}<br>Due: ${newTask.dueDate}`;
+    taskItem.innerHTML =`${newTask.description}
+                        <br>
+                        Due: ${newTask.dueDate}
+                        <br>
+                        <label for="completed">Completed: </label>`;
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = 'completed';
+    checkbox.onclick = () => newTask.completeTask(taskItem);
+    taskItem.appendChild(checkbox);
     taskList.appendChild(taskItem);
 }
 
