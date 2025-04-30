@@ -35,3 +35,17 @@ document.addEventListener("DOMContentLoaded", function () {
         maths(); // Recalculate on button press
     });
 });
+
+// Example of a shopping list
+let shoppingList = ["Bread", "Milk", "Eggs", "Butter", "Cheese"];
+
+function addItem(item) {
+    shoppingList.push(item);
+    console.log(`Added ${item} to the shopping list.`);
+    console.log(`Current shopping list: ${shoppingList}`);
+}
+function removeLastItem() {
+    shoppingList.pop();
+    console.log(`Removed last from the shopping list.`);
+    console.log(`Current shopping list: ${shoppingList}`);
+}
