@@ -49,3 +49,22 @@ function removeLastItem() {
     console.log(`Removed last from the shopping list.`);
     console.log(`Current shopping list: ${shoppingList}`);
 }
+function removeFirstItem() {
+    shoppingList.shift();
+    console.log(`Removed first from the shopping list.`);
+    console.log(`Current shopping list: ${shoppingList}`);
+}
+function addToStart(item) {
+    shoppingList.unshift(item);
+    console.log(`Added ${item} to the start of the shopping list.`);
+    console.log(`Current shopping list: ${shoppingList}`);
+}function removeSpecificItem(item) {
+    const index = shoppingList.indexOf(item);
+    if (index > -1) {
+        shoppingList.splice(index, 1);
+        console.log(`Removed ${item} from the shopping list.`);
+    } else {
+        console.log(`${item} not found in the shopping list.`);
+    }
+    console.log(`Current shopping list: ${shoppingList}`);
+}
