@@ -7,8 +7,11 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div id="calcContainer">
-      <div id="calcButtons" class="grid grid-cols-3 w-[400px]">
+    <div id="calcContainer" class="flex flex-col items-center justify-center w-full mt-4">
+      <div id="calcScreenContainer" class="w-[390px] bg-black text-slate-200 h-[80px] rounded-md">
+        <p id="calcScreen"></p>
+      </div>
+      <div id="calcButtons" class="grid grid-cols-3 w-[400px] mt-2">
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">7</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">8</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">9</button>
