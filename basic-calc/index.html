@@ -8,22 +8,30 @@
   </head>
   <body>
     <div id="calcContainer" class="flex flex-col items-center justify-center w-full mt-4">
-      <div id="calcScreenContainer" class="w-[390px] bg-black text-slate-200 h-[80px] rounded-md">
-        <p id="calcScreen"></p>
-      </div>
-      <div id="calcButtons" class="grid grid-cols-3 w-[400px] mt-2">
+      <div id="calcButtons" class="grid grid-cols-4 w-[400px]">
+        <div id="calcScreenContainer" class="w-[390px] mx-[5px] bg-black text-slate-200 h-[80px] rounded-md col-span-full mb-2">
+          <p id="calcScreen"></p>
+        </div>
+        <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">( )</button>
+        <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">x&sup2;</button>
+        <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">Del</button>
+        <button class="p-4 bg-blue-200 m-1 shadow-lg rounded-md">+</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">7</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">8</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">9</button>
+        <button class="p-4 bg-blue-200 m-1 shadow-lg rounded-md">-</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">4</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">5</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">6</button>
+        <button class="p-4 bg-blue-200 m-1 shadow-lg rounded-md">x</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">1</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">2</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">3</button>
+        <button class="p-4 bg-blue-200 m-1 shadow-lg rounded-md">/</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">.</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">0</button>
         <button class="p-4 bg-slate-200 m-1 shadow-lg rounded-md">CE</button>
+        <button class="p-4 bg-blue-200 m-1 shadow-lg rounded-md">=</button>
       </div>
     </div>
   </body>
