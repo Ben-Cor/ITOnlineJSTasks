@@ -4,14 +4,16 @@ let buttons = document.querySelectorAll("button");
 let screenOutput = document.getElementById("calcScreen").textContent;
 
 buttons.forEach(button => {
-    button.addEventListener("click", buttonPress )    
+    let value = button.textContent
+    button.addEventListener("click", buttonPress(value) )    
 });
 
-// function buttonPress(screenOutput) {
-//     let buttonInput = button.textContent.value
-//     switch (buttonInput) {
-//         case (buttonInput.typeof == Number):
-//             screenOutput += buttonInput;
-//         break;
-//     }
-// }
+
+
+function buttonPress(value) {
+    switch (value) {
+        case (value.typeof == Number):
+            screenOutput += buttonInput;
+        break;
+    }
+}
