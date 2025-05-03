@@ -28,22 +28,33 @@ buttons.forEach(button => {
             currentInput = screen.textContent.slice(0, -1)
         } else if (!isNaN(input)) {
             currentInput += parseFloat(input)
-        } else if (button.classList.contains("operatorButton")) {
+        } else if (button.classList.contains("operatorButton") | input == ".") {
             currentInput += input
+        } else if (input == "=") {
+            function maths (problem) {
+                return eval(problem)
+            }
+            currentInput = maths(currentInput)
         }
+
             
 
-    //     switch (input) {
-    //         case (input == "CE"):
-    //             screen.textContent == ""
-    //         break;
-    //         case (input == "Del") :
-    //             screen.textContent = screen.textContent.slice(0, -1)
-    //         break;
-    //         case (!isNaN(input)):
-    //             screen.textContent += input
-    //         break;
-    //     } 
+        // switch (input) {
+        //     case "Clear":
+        //         currentInput = ""
+        //     break;
+        //     case "Del":
+        //         currentInput = screen.textContent.slice(0, -1)
+        //     break;
+        //     case !isNaN(input):
+        //         currentInput += parseFloat(input)
+        //     break;
+        //     case "+" | "-":
+        //         currentInput += input
+        //     break;
+        //     default:
+        //         currentInput += input;
+        // } 
     screen.textContent = currentInput;
     })
 });
