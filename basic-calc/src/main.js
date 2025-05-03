@@ -2,7 +2,8 @@ import './style.css'
 
 let buttons = document.querySelectorAll("button");
 let screen = document.getElementById("calcScreen");
-let currentInput = ""
+let currentInput = "";
+let evaluated = false;
 
 // Styling for button press
 buttons.forEach(button => {
@@ -24,37 +25,31 @@ buttons.forEach(button => {
         let input = button.textContent
         if (input === "Clear") {
             currentInput = "";
+            evaluated = false
         } else if (input == "Del") {
             currentInput = screen.textContent.slice(0, -1)
+            evaluated = false
         } else if (!isNaN(input)) {
-            currentInput += parseFloat(input)
+            if (evaluated) {
+                currentInput = input
+                evaluated = false;
+            } else {
+                currentInput += parseFloat(input)
+            }
         } else if (button.classList.contains("operatorButton") | input == ".") {
             currentInput += input
+            evaluated = false
         } else if (input == "=") {
             function maths (problem) {
                 return eval(problem)
             }
             currentInput = maths(currentInput)
+            evaluated = true;
+        } else if (input == "x2") {
+            currentInput = currentInput * currentInput;
+            evaluated = false
         }
 
-            
-
-        // switch (input) {
-        //     case "Clear":
-        //         currentInput = ""
-        //     break;
-        //     case "Del":
-        //         currentInput = screen.textContent.slice(0, -1)
-        //     break;
-        //     case !isNaN(input):
-        //         currentInput += parseFloat(input)
-        //     break;
-        //     case "+" | "-":
-        //         currentInput += input
-        //     break;
-        //     default:
-        //         currentInput += input;
-        // } 
     screen.textContent = currentInput;
     })
 });
