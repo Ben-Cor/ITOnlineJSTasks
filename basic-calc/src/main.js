@@ -40,6 +40,15 @@ buttons.forEach(button => {
                 currentInput = currentInput * currentInput;
                 evaluated = false
             break;
+            case ("( )"):
+                let openBrackets = currentInput.split("(").length -1;
+                let closedBrackets = currentInput.split(")").length -1;
+                if (openBrackets > closedBrackets) {
+                    currentInput += ")"
+                } else {
+                    currentInput += "("
+                }
+            break
             default:
                 if (evaluated && !isNaN(input)) {
                     currentInput = input
