@@ -4,17 +4,6 @@ let buttons = document.querySelectorAll("button");
 let screen = document.getElementById("calcScreen");
 let currentInput = ""
 
-// function buttonPress(value) {
-//     switch (value) {
-//         case (value.typeof == Number):
-//             screenOutput += value;
-//         break;
-//         case (value == "+"):
-//             screenOutput += "+"
-//     }
-// }
-
-
 // Styling for button press
 buttons.forEach(button => {
     button.addEventListener("mousedown", () => {
@@ -29,12 +18,12 @@ buttons.forEach(button => {
 })
 
 
-//Add to screen
+//Add to screen and currentInput
 buttons.forEach(button => {
     button.addEventListener("click", ()=>{
         let input = button.textContent
-        if (input == "Clear") {
-            currentInput == ""
+        if (input === "Clear") {
+            currentInput = "";
         } else if (input == "Del") {
             currentInput = screen.textContent.slice(0, -1)
         } else if (!isNaN(input)) {
