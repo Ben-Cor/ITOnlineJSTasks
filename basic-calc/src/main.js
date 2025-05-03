@@ -23,31 +23,31 @@ buttons.forEach(button => {
 buttons.forEach(button => {
     button.addEventListener("click", ()=>{
         let input = button.textContent
-        if (input === "Clear") {
-            currentInput = "";
-            evaluated = false
-        } else if (input == "Del") {
-            currentInput = screen.textContent.slice(0, -1)
-            evaluated = false
-        } else if (!isNaN(input)) {
-            if (evaluated) {
-                currentInput = input
-                evaluated = false;
-            } else {
-                currentInput += parseFloat(input)
-            }
-        } else if (button.classList.contains("operatorButton") | input == ".") {
-            currentInput += input
-            evaluated = false
-        } else if (input == "=") {
-            function maths (problem) {
-                return eval(problem)
-            }
-            currentInput = maths(currentInput)
-            evaluated = true;
-        } else if (input == "x2") {
-            currentInput = currentInput * currentInput;
-            evaluated = false
+        switch (input) {
+            case ("Clear"):
+                currentInput = "";
+                evaluated = false
+            break;
+            case ("Del"):
+                currentInput = screen.textContent.slice(0, -1)
+                evaluated = false
+            break;
+            case ("="):
+                currentInput = eval(currentInput)
+                evaluated = true;
+            break;
+            case ("x2"):
+                currentInput = currentInput * currentInput;
+                evaluated = false
+            break;
+            default:
+                if (evaluated && !isNaN(input)) {
+                    currentInput = input
+                    evaluated = false;
+                } else {
+                    currentInput += input
+                    evaluated = false
+                }
         }
 
     screen.textContent = currentInput;
