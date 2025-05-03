@@ -19,7 +19,7 @@ buttons.forEach(button => {
 })
 
 
-//Add to screen and currentInput
+//Add to screen and currentInput updates
 buttons.forEach(button => {
     button.addEventListener("click", ()=>{
         let input = button.textContent
