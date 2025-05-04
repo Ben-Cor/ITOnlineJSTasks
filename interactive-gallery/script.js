@@ -1,13 +1,16 @@
+const form = document.getElementById("inputs"); // Match the updated id in the HTML
 
-const submit = document.getElementById("submit");
-let url = document.getElementById("imgURL").value;
+function addImage(event) {
+    event.preventDefault();
 
-
-function addImage() {
+    const url = document.getElementById("imgURL").value; // Get the value dynamically
     if (url === "") {
         alert("Please enter a valid URL.");
         return;
     } else {
+        const div = document.createElement("div");
+        div.classList.add("gallery-item");
+        div.setAttribute("id", "gallery-item");
         const gallery = document.getElementById("gallery");
         const image = document.createElement("img");
         image.classList.add("gallery-image");
@@ -15,12 +18,13 @@ function addImage() {
         const removeButton = document.createElement("button");
         removeButton.textContent = "Remove";
         removeButton.classList.add("remove-button");
-        removeButton.setAttribute("onclick", () => {
-            gallery.removeChild(image);
+        removeButton.addEventListener("click", () => {
+            gallery.removeChild(div);
         });
-        image.appendChild(removeButton);
-        gallery.appendChild(image);
+        div.appendChild(image);
+        div.appendChild(removeButton);
+        gallery.appendChild(div);
     }
 }
 
-submit.addEventListener("submit", addImage())
+form.addEventListener("submit", addImage);

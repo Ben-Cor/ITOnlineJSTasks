@@ -22,4 +22,18 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+#gallery-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 4px;
+    gap: 4px;
 }
