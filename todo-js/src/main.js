@@ -2,11 +2,13 @@ import './style.css'
 
 const tasks = [];
 const taskList = document.getElementById("todo-list");
+const addButton = document.getElementById("add-todo");
 
-function addTask(task) {
+addButton.addEventListener("click", (task) => {
   const taskText = document.getElementById("new-todo").value;
-  tasks.push(taskText);
-}
+  tasks.push(taskText)
+  displayTasks();
+})
 
 function displayTasks() {
   tasks.forEach((task, index) => {
