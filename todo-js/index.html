@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do JS</title>
+    <script type="module" src="/src/main.js"></script>
   </head>
   <body>
-    <div></div>
-    <script type="module" src="/src/main.js"></script>
+    <header>
+      <h1>To Do JS</h1>
+    <div>
+      <input type="text" id="new-todo" placeholder="What needs to be done?" />
+      <button id="add-todo">Add</button>
+    </div>
+    <ul id="todo-list">
+      <!-- To Do items will be added here dynamically -->
+    </ul>
   </body>
 </html>
