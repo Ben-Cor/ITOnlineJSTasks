@@ -4,8 +4,11 @@ const tasks = [];
 const taskList = document.getElementById("todo-list");
 const addButton = document.getElementById("add-todo");
 
-addButton.addEventListener("click", (task) => {
+addButton.addEventListener("click", () => {
   const taskText = document.getElementById("new-todo").value;
+  if (taskText === "") {
+    return;
+  }
   tasks.push(taskText)
   displayTasks();
 })
